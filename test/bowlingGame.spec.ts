@@ -1,5 +1,3 @@
-// If, after both balls, there is still at least one of the ten
-// pins standing the score for that frame is simply the total
 class BowlingGame {
   score(game: string) {
     const calculateRolls = () => {
@@ -14,7 +12,6 @@ class BowlingGame {
   }
 }
 
-// number of pins knocked down in those two balls.
 describe("Bowling Game", () => {
   describe("Acceptance", () => {
     test("should bowl a game score of 90", () => {
