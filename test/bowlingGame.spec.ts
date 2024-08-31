@@ -37,9 +37,12 @@ describe("Bowling Game", () => {
       ${"3"}  | ${3}
       ${"13"} | ${4}
       ${"14"} | ${5}
-    `("should pins given expected pins", ({ pins, expectedResult }) => {
-      let result = bowlingGame.score(pins);
-      expect(result).toEqual(expectedResult);
-    });
+    `(
+      "should knock down $pins pin(s) for a total of $expectedResult",
+      ({ pins, expectedResult }) => {
+        let result = bowlingGame.score(pins);
+        expect(result).toEqual(expectedResult);
+      },
+    );
   });
 });
