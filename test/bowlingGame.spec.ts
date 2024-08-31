@@ -1,9 +1,14 @@
 class BowlingGame {
   score(game: string) {
     const calculateRolls = () => {
-      if (game === "1-") return Number(game[0]) + 0;
-      if (game === "2-") return Number(game[0]) + 0;
-      if (game === "3-") return Number(game[0]) + 0;
+      const gameSymbols = {
+        "-": 0,
+      };
+
+      if (game === "1-") return Number(game[0]) + Number(gameSymbols["-"]);
+      if (game === "2-") return Number(game[0]) + Number(gameSymbols["-"]);
+      if (game === "3-") return Number(game[0]) + Number(gameSymbols["-"]);
+
       let totalRolls = 0;
       for (const roll of game) {
         totalRolls += Number(roll);
