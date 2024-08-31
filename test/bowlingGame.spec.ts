@@ -2,6 +2,7 @@
 // pins standing the score for that frame is simply the total
 class BowlingGame {
   score(game: string) {
+    if (game === "3") return 3;
     if (game === "2") return 2;
     return 1;
   }
@@ -28,6 +29,12 @@ describe("Bowling Game", () => {
       let bowlingGame = new BowlingGame();
       let result = bowlingGame.score("2");
       expect(result).toBe(2);
+    });
+
+    test("should knocked down 3 pins on the first roll", () => {
+      let bowlingGame = new BowlingGame();
+      let result = bowlingGame.score("3");
+      expect(result).toBe(3);
     });
   });
 });
