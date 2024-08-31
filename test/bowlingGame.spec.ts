@@ -5,12 +5,11 @@ class BowlingGame {
         "-": 0,
       };
 
-      if (game === "1-") return Number(game[0]) + Number(gameSymbols["-"]);
-      if (game === "2-") return Number(game[0]) + Number(gameSymbols["-"]);
-      if (game === "3-") return Number(game[0]) + Number(gameSymbols["-"]);
-
       let totalRolls = 0;
       for (const roll of game) {
+        if (roll === "-") {
+          return (totalRolls += Number(gameSymbols["-"]));
+        }
         totalRolls += Number(roll);
       }
       return totalRolls;
