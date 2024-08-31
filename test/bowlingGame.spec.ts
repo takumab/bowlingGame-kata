@@ -3,7 +3,7 @@
 class BowlingGame {
   score(game: string) {
     if (game === "14") return 1 + 4;
-    if (game === "13") return 4;
+    if (game === "13") return 1 + 3;
     if (game === "3") return 3;
     if (game === "2") return 2;
     if (game === "1") return 1;
