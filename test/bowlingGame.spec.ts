@@ -6,14 +6,15 @@ class BowlingGame {
         "-": 0,
       };
 
-      let totalRolls = 0;
-      for (let roll of game) {
-        if (roll === GUTTER_BALL) {
-          roll = gameSymbols[GUTTER_BALL].toString();
-        }
-        totalRolls += Number(roll);
-      }
-      return totalRolls;
+      const result = game
+        .split("")
+        .map((roll: string) => {
+          if (roll === GUTTER_BALL) return gameSymbols[GUTTER_BALL].toString();
+          return roll;
+        })
+        .reduce((total: number, roll: string) => total + Number(roll), 0);
+
+      return result;
     };
 
     return calculateRolls();
