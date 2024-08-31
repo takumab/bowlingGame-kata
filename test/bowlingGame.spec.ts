@@ -7,9 +7,9 @@ class BowlingGame {
       };
 
       let totalRolls = 0;
-      for (const roll of game) {
+      for (let roll of game) {
         if (roll === GUTTER_BALL) {
-          return (totalRolls += Number(gameSymbols[GUTTER_BALL]));
+          roll = gameSymbols[GUTTER_BALL].toString();
         }
         totalRolls += Number(roll);
       }
@@ -45,6 +45,7 @@ describe("Bowling Game", () => {
       ${"1-"} | ${1}
       ${"2-"} | ${2}
       ${"3-"} | ${3}
+      ${"-1"} | ${1}
     `(
       "should knock down $pins pin(s) for a total of $expectedResult",
       ({ pins, expectedResult }) => {
