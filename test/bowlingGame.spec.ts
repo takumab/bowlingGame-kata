@@ -1,14 +1,15 @@
 class BowlingGame {
   score(game: string) {
     const calculateRolls = () => {
+      const GUTTER_BALL = "-";
       const gameSymbols = {
         "-": 0,
       };
 
       let totalRolls = 0;
       for (const roll of game) {
-        if (roll === "-") {
-          return (totalRolls += Number(gameSymbols["-"]));
+        if (roll === GUTTER_BALL) {
+          return (totalRolls += Number(gameSymbols[GUTTER_BALL]));
         }
         totalRolls += Number(roll);
       }
