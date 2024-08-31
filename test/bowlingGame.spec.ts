@@ -30,29 +30,16 @@ describe("Bowling Game", () => {
       bowlingGame = new BowlingGame();
     });
 
-    test("should knock down 1 pin on the first roll", () => {
-      let result = bowlingGame.score("1");
-      expect(result).toBe(1);
-    });
-
-    test("should knock down 2 pins on the first roll", () => {
-      let result = bowlingGame.score("2");
-      expect(result).toBe(2);
-    });
-
-    test("should knock down 3 pins on the first roll", () => {
-      let result = bowlingGame.score("3");
-      expect(result).toBe(3);
-    });
-
-    test("should knock down a total of 4 pins", () => {
-      let result = bowlingGame.score("13");
-      expect(result).toBe(4);
-    });
-
-    test("should knock down a total of 5 pins", () => {
-      let result = bowlingGame.score("14");
-      expect(result).toBe(5);
+    test.each`
+      pins    | expectedResult
+      ${"1"}  | ${1}
+      ${"2"}  | ${2}
+      ${"3"}  | ${3}
+      ${"13"} | ${4}
+      ${"14"} | ${5}
+    `("should pins given expected pins", ({ pins, expectedResult }) => {
+      let result = bowlingGame.score(pins);
+      expect(result).toEqual(expectedResult);
     });
   });
 });
