@@ -2,7 +2,7 @@
 // pins standing the score for that frame is simply the total
 class BowlingGame {
   score(game: string) {
-    if (game === "14") return 5;
+    if (game === "14") return 1 + 4;
     if (game === "13") return 4;
     if (game === "3") return 3;
     if (game === "2") return 2;
