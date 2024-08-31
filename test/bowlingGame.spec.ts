@@ -6,7 +6,7 @@ class BowlingGame {
     if (game === "13") return Number(game[0]) + Number(game[1]);
     if (game === "3") return Number(game[0]);
     if (game === "2") return Number(game[0]);
-    if (game === "1") return 1;
+    if (game === "1") return Number(game[0]);
   }
 }
 
