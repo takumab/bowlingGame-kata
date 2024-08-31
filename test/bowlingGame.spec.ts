@@ -3,6 +3,7 @@ class BowlingGame {
     const calculateRolls = () => {
       if (game === "1-") return 1;
       if (game === "2-") return 2;
+      if (game === "3-") return 3;
       let totalRolls = 0;
       for (const roll of game) {
         totalRolls += Number(roll);
@@ -38,6 +39,7 @@ describe("Bowling Game", () => {
       ${"14"} | ${5}
       ${"1-"} | ${1}
       ${"2-"} | ${2}
+      ${"3-"} | ${3}
     `(
       "should knock down $pins pin(s) for a total of $expectedResult",
       ({ pins, expectedResult }) => {
