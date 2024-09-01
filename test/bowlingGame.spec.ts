@@ -1,22 +1,21 @@
 class BowlingGame {
   score(game: string) {
-    const rolls = game.split("|").join("");
-    const calculateRolls = () => {
-      const GUTTER_BALL = "-";
-
-      const result = rolls
-        .split("")
-        .map((roll: string) => {
-          if (roll === GUTTER_BALL) return 0;
-          return Number(roll);
-        })
-        .reduce((total: number, roll: number) => total + roll, 0);
-
-      return result;
-    };
-
-    return calculateRolls();
+    return this.calculateRollsFor(game);
   }
+  private calculateRollsFor = (game: string) => {
+    const rolls = game.split("|").join("");
+    const GUTTER_BALL = "-";
+
+    const result = rolls
+      .split("")
+      .map((roll: string) => {
+        if (roll === GUTTER_BALL) return 0;
+        return Number(roll);
+      })
+      .reduce((total: number, roll: number) => total + roll, 0);
+
+    return result;
+  };
 }
 
 describe("Bowling Game", () => {
