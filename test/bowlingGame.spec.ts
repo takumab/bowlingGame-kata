@@ -1,11 +1,10 @@
 class BowlingGame {
   score(game: string) {
-    if (game === "12|") return 3;
-    if (game === "34|") return 7;
+    const rolls = game.split("|").join("");
     const calculateRolls = () => {
       const GUTTER_BALL = "-";
 
-      const result = game
+      const result = rolls
         .split("")
         .map((roll: string) => {
           if (roll === GUTTER_BALL) return 0;
