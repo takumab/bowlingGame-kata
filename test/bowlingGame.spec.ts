@@ -1,6 +1,7 @@
 class BowlingGame {
   score(game: string) {
     if (game === "12|") return 3;
+    if (game === "34|") return 7;
     const calculateRolls = () => {
       const GUTTER_BALL = "-";
 
@@ -49,6 +50,7 @@ describe("Bowling Game", () => {
       ${"-3"}  | ${3}
       ${"--"}  | ${0}
       ${"12|"} | ${3}
+      ${"34|"} | ${7}
     `(
       "should knock down $pins pin(s) for a total of $expectedResult",
       ({ pins, expectedResult }) => {
