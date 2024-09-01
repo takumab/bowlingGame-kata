@@ -2,17 +2,14 @@ class BowlingGame {
   score(game: string) {
     const calculateRolls = () => {
       const GUTTER_BALL = "-";
-      const gameSymbols = {
-        "-": 0,
-      };
 
       const result = game
         .split("")
         .map((roll: string) => {
-          if (roll === GUTTER_BALL) return gameSymbols[GUTTER_BALL].toString();
-          return roll;
+          if (roll === GUTTER_BALL) return 0;
+          return Number(roll);
         })
-        .reduce((total: number, roll: string) => total + Number(roll), 0);
+        .reduce((total: number, roll: number) => total + roll, 0);
 
       return result;
     };
