@@ -46,6 +46,7 @@ describe("Bowling Game", () => {
       ${"-1"} | ${1}
       ${"-2"} | ${2}
       ${"-3"} | ${3}
+      ${"--"} | ${0}
     `(
       "should knock down $pins pin(s) for a total of $expectedResult",
       ({ pins, expectedResult }) => {
