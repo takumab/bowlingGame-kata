@@ -8,7 +8,9 @@ class BowlingGame {
       return 10 + Number(game[3]) + (Number(game[3]) + Number(game[4]));
     if (game.includes("5/|24"))
       return 10 + Number(game[3]) + (Number(game[3]) + Number(game[4]));
-    if (game.includes("7/|44")) return 10 + Number(game[3]) + (4 + 4);
+    if (game.includes("7/|44"))
+      return 10 + Number(game[3]) + (Number(game[3]) + Number(game[4]));
+
     const rolls = game.split("|").join("");
     const GUTTER_BALL = "-";
 
