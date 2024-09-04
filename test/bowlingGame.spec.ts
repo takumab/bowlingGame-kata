@@ -4,9 +4,8 @@ class BowlingGame {
   }
 
   private calculateRollsFor = (game: string) => {
-    if (game.includes("/")) {
+    if (game.includes("/"))
       return 10 + Number(game[3]) + (Number(game[3]) + Number(game[4]));
-    }
 
     const rolls = game.split("|").join("");
     const GUTTER_BALL = "-";
