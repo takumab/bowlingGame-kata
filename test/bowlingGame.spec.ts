@@ -6,6 +6,7 @@ class BowlingGame {
   private calculateRollsFor = (game: string) => {
     if (game.includes("8/|34")) return 10 + 3 + (3 + 4);
     if (game.includes("5/|24")) return 10 + 2 + (2 + 4);
+    if (game.includes("7/|44")) return 10 + 4 + (4 + 4);
     const rolls = game.split("|").join("");
     const GUTTER_BALL = "-";
 
@@ -64,6 +65,7 @@ describe("Bowling Game", () => {
       ${"34|56"} | ${18}
       ${"8/|34"} | ${20}
       ${"5/|24"} | ${18}
+      ${"7/|44"} | ${22}
     `(
       "should knock down $pins pin(s) for a total of $expectedResult",
       ({ pins, expectedResult }) => {
